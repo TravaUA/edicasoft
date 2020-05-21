@@ -1,0 +1,12 @@
+// --------------------------------------------------
+// Common Mixins
+// --------------------------------------------------
+
+// Media query mixin with only min width
+// -------------------------
+@mixin minScreen($minWidth) {
+	// using plus '1' for don't overlap
+	@media screen and (min-width: $minWidth + 1) {
+		@content;
+	}
+}

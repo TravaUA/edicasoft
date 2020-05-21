@@ -1,0 +1,29 @@
+{
+  "name": "edicasoft",
+  "version": "1.0.0",
+  "description": "Edicasoft Test Task",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "reset-css": "^5.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TravaUA/edicasoft.git"
+  },
+  "author": "Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TravaUA/edicasoft/issues"
+  },
+  "homepage": "https://github.com/TravaUA/edicasoft#readme"
+}

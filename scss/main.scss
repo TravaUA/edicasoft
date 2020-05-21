@@ -1,0 +1,154 @@
+// --------------------------------------------------
+// Common Styles
+// --------------------------------------------------
+
+@import "core";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	background-color: $white;
+	font-size: 10px; // static
+	line-height: 1;
+	/*remove gray highlight when tapping links in mobile*/
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	/*for some Androids*/
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	background-color: $white;
+	color: $textMainColor;
+	font-family: $fontBase;
+	font-size: $fontSizeBase;
+	line-height: $lineHeightBase;
+
+	@include minScreen($middle) {
+		font-size: $fontSizeBase_L;
+		line-height: $lineHeightBase_L;
+	}
+}
+
+// Typograpty
+// -------------------------
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	color: $black;
+}
+
+.h1 {
+	font-size: 2.6rem;
+	font-weight: bold;
+	line-height: 3.8rem;
+
+	@include minScreen($middle) {
+
+	}
+}
+
+// Content
+// -------------------------
+.section_hero {
+	display: flex;
+	height: 80rem;
+	position: relative;
+
+	.section_hero_info {
+		background-color: $blackSqueeze;
+		padding: 5rem 1.5rem;
+
+		.section_hero_text {	
+			margin-bottom: 4rem;
+
+			.h1 {
+				margin-bottom: 2.5rem;
+			}
+		}
+
+		.section_hero_label {
+			color: $dustyGray;
+			font-size: 1.4rem;
+			font-weight: bold;
+			line-height: 2rem;
+			margin-bottom: .7rem;
+			text-transform: uppercase;
+		}
+
+		.section_hero_description {
+			line-height: 2.8rem;
+		}
+	}
+
+	.section_hero_form {
+		background-color: rgba(28, 28, 28, .9);
+		bottom: 5rem;
+		border-radius: 1rem;
+		display: flex;
+		flex-direction: column;
+		left: 1.5rem;
+		// -webkit-transform: translateX(-50%);
+		// transform: translateX(-50%)
+		padding: 4rem 2.2rem 3.5rem;
+		position: absolute;
+		right: 1.5rem;
+
+		.hero_form_input {
+			border: 0;
+			border-radius: .4rem;
+			color: $codGray;
+			font-size: 1.6rem;
+			line-height: 2.4rem;
+			margin-bottom: 2rem;
+			padding: 1.3rem 3rem 1.1rem;
+		}
+
+		.hero_form_btn {
+			border: 0;
+			background-color: $brightTurquoise;
+			border-radius: .6rem;
+			color: $black;
+			font-size: 1.6rem;
+			font-weight: bold;
+			line-height: 4.8rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.hero_form_description {
+			color: $textMainColor;
+			font-size: 1.3rem;
+			line-height: 2.3rem;
+			padding-left: 1rem;
+			position: relative;
+
+			&:before {
+				content: '*';
+				display: inline-block;
+				left: 0;
+				position: absolute;
+			}
+		}
+	}
+
+	.section_hero_bg {
+		background: no-repeat center url('../img/bg_cakes.png');
+		background-size: cover;
+		flex-grow: 1;
+		min-width: 6rem;
+	
+		@include minScreen($middle) {
+			background-image: url('../img/bg_cakes@2x.png');
+		}
+	}
+}
