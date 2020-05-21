@@ -32,9 +32,13 @@ body {
 	line-height: $lineHeightBase;
 
 	@include minScreen($middle) {
-		font-size: $fontSizeBase_L;
-		line-height: $lineHeightBase_L;
+		// font-size: $fontSizeBase_L;
+		// line-height: $lineHeightBase_L;
 	}
+}
+
+img {
+	max-width: 100%;
 }
 
 // Typograpty
@@ -52,10 +56,18 @@ body {
 	font-size: 2.6rem;
 	font-weight: bold;
 	line-height: 3.8rem;
+	letter-spacing: -1.27273px;
 
 	@include minScreen($middle) {
-
+		font-size: 3rem;
 	}
+}
+
+.h2 {
+	font-size: 2.2rem;
+	font-weight: bold;
+	line-height: 3.4rem;
+	letter-spacing: -0.5px;
 }
 
 // Content
@@ -65,15 +77,44 @@ body {
 	height: 80rem;
 	position: relative;
 
+	@include minScreen($middle) {
+		height: 77rem;
+	}
+
 	.section_hero_info {
 		background-color: $blackSqueeze;
+		box-sizing: border-box;
 		padding: 5rem 1.5rem;
+
+		@include minScreen($middle) {
+			align-items: center;
+			display: flex;
+			padding: 0;
+			padding-left: 3rem;
+		}
+
+		@include minScreen($extraLarge) {
+			padding-left: 7.5rem;
+			width: 50%;
+		}
 
 		.section_hero_text {	
 			margin-bottom: 4rem;
 
+			@include minScreen($middle) {
+				width: 60%;
+			}
+
+			@include minScreen($extraLarge) {
+				width: 48%;
+			}
+
 			.h1 {
 				margin-bottom: 2.5rem;
+
+				@include minScreen($middle) {
+					margin-bottom: 2.9rem;
+				}
 			}
 		}
 
@@ -82,6 +123,7 @@ body {
 			font-size: 1.4rem;
 			font-weight: bold;
 			line-height: 2rem;
+			letter-spacing: 1.08333px;
 			margin-bottom: .7rem;
 			text-transform: uppercase;
 		}
@@ -93,16 +135,33 @@ body {
 
 	.section_hero_form {
 		background-color: rgba(28, 28, 28, .9);
+		box-sizing: border-box;
 		bottom: 5rem;
 		border-radius: 1rem;
 		display: flex;
 		flex-direction: column;
 		left: 1.5rem;
-		// -webkit-transform: translateX(-50%);
-		// transform: translateX(-50%)
 		padding: 4rem 2.2rem 3.5rem;
 		position: absolute;
 		right: 1.5rem;
+
+		@include minScreen($middle) {
+			bottom: auto;
+			left: auto;
+			right: 3rem;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 34.3rem;
+		}
+
+		@include minScreen($extraLarge) {
+			left: 50%;
+			padding: 7.8rem 5.3rem 7.1rem;
+			right: auto;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 41.1rem;
+		}
 
 		.hero_form_input {
 			border: 0;
@@ -126,7 +185,6 @@ body {
 		}
 
 		.hero_form_description {
-			color: $textMainColor;
 			font-size: 1.3rem;
 			line-height: 2.3rem;
 			padding-left: 1rem;
@@ -149,6 +207,100 @@ body {
 	
 		@include minScreen($middle) {
 			background-image: url('../img/bg_cakes@2x.png');
+			width: 20.7rem;
+		}
+
+		@include minScreen($extraLarge) {
+			width: 50%;
+			width: 41.1rem;
 		}
 	}
 }
+
+.section-articles {
+	padding: 4rem 1.5rem;
+
+	@include minScreen($middle) {
+		padding: 4rem 3rem;
+	}
+
+	@include minScreen($extraLarge) {
+		padding: 7rem 7.5rem;
+	}
+
+	.article {
+		&:not(:last-child) {
+			margin-bottom: 4rem;
+		}
+
+		@include minScreen($middle) {
+			align-items: center;
+			display: flex;
+		}
+
+		.h2 {
+			margin-bottom: 2rem;
+
+			@include minScreen($middle) {
+				margin-bottom: 3rem;
+			}
+		}
+
+		@include minScreen($extraLarge) {
+			&:last-child {
+				flex-direction: row-reverse;
+
+				.article-picture {
+					padding-left: 0;
+					padding-right: 11.3rem;
+				}
+
+				.article-text {
+					padding-left: 11.3rem;
+					padding-right: 5rem;
+				}
+			}
+		}
+	}
+
+	.article-picture,
+	.article-text {
+		@include minScreen($middle) {
+			width: 50%;
+		}
+	}
+
+	.article-picture {
+		@include minScreen($extraLarge) {
+			padding-left: 11.3rem;
+			width: 60%;
+		}
+	}
+
+	.article-text {
+		@include minScreen($middle) {
+			padding-left: 5rem;
+		}
+
+		@include minScreen($extraLarge) {
+			padding-right: 11.3rem;
+			width: 40%;
+		}
+	}
+
+	.article-img {
+		width: 100%;
+		margin-bottom: 2rem;
+
+		@include minScreen($middle) {
+			height: 350px;
+			margin-bottom: 0;
+		}
+	}
+
+	.article-description {
+		line-height: 2.8rem;
+	}
+}
+
+

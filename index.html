@@ -25,7 +25,7 @@
     <div class="main-wrap">
         <header class="header navbar navbar-expand-lg navbar-light"></header>
 
-        <main class="main">
+        <main class="main" id="app">
           <section class="section_hero">
             <div class="section_hero_info">
               <div class="section_hero_text">
@@ -41,17 +41,57 @@
                 <input type="text" id="name" name="name" placeholder="Your Name" class="hero_form_input">
                 <input type="email" id="email" name="email" placeholder="Your Email" class="hero_form_input">
                 <input type="tel" id="phone" name="phone" placeholder="Phone" class="hero_form_input">
-                <button type="submit" class="hero_form_btn">Download eBook Now</button>
+                <button type="button" class="hero_form_btn" v-on:click="showMessage">{{ message }}</button>
 
                 <div class="hero_form_description">We don’t share your personal info with anyone. Check out our Policy for more information.</div>
               </form>
             </div>
             <div class="section_hero_bg"></div>
           </section>
+
+          <section class="section-articles">
+            <div class="article">
+              <picture class="article-picture">
+                <source media="(min-width: 1200px)" srcset="img/cake@2x.png">
+                <img src="img/cake.png" alt="Image Cake" class="article-img">
+              </picture>
+
+              <div class="article-text">
+                <h2 class="h2">Do you know how to level a cake?</h2>
+                <div class="article-description">
+                  After years of cake successes and flops, 
+                  I’m confident in this homemade vanilla cake. During my recipe testing, 
+                  I combined my white cake recipe and naked cake recipe. 
+                  These are two reader favorites and I knew they’d be the best starting point. 
+                </div>
+              </div>
+            </div>
+
+            <div class="article">
+              <picture class="article-picture">
+                <source media="(min-width: 1200px)" srcset="img/pancake@2x.png">
+                <img src="img/pancake.png" alt="Image Pancake" class="article-img">
+              </picture>
+
+              <div class="article-text">
+                <h2 class="h2">Vanilla Cake Success Tips</h2>
+                <div class="article-description">
+                  I always eyeball the amount of frosting between cake layers, 
+                  but I measured when I decorated the pictured cake. 
+                  The vanilla buttercream recipe below yields about 6 cups of frosting.
+                  I recommend you use about 1.5 heaping cups of buttercream between each cake layer and reserve the last 3 cups for outside the cake. 
+                </div>
+              </div>
+            </div>
+          </section>
         </main>
     </div>
     <footer class="footer">
 
     </footer>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
